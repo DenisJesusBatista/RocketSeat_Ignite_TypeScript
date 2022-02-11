@@ -6,13 +6,13 @@
 
 interface Course {
     name: string;
-    duration: number;
+    duration?: number; /**Atributo opcional na interface, usa-se o ? */
     educator: string;
 
 }
 
 class CreateCourseService {
-    execute({ duration, educator, name }: Course) {
+    execute({ duratio = 8, educator, name }: Course) {
         console.log(name, duration, educator)
     }
 }
